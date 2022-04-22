@@ -107,9 +107,9 @@ public class Principal {
                 int cantidadZombies = entrada.nextInt();
 
                 Ubicacion nuevaUbicacion = new Ubicacion(nombre, distancia, cantidadZombies);
-                /*nuevaUbicacion.setNombre(nombre);
+                nuevaUbicacion.setNombre(nombre);
                 nuevaUbicacion.setDistanciaAlexandria(distancia);
-                nuevaUbicacion.setCantidadZombies(cantidadZombies);*/
+                nuevaUbicacion.setCantidadZombies(cantidadZombies);
                 break;
             }
             if (numero_I == 8) {
