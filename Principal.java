@@ -32,12 +32,6 @@ public class Principal {
     }
 
     public static void mostrarMenu(int numero_I) {
-
-        while (true) {
-
-            if (numero_I == 0) {
-                break;
-            }
             if (numero_I == 1) {
                 Scanner entrada = new Scanner(System.in);
                 System.out.println("Ingresar el nombre del zombie");
@@ -50,14 +44,6 @@ public class Principal {
                 String sangre = entrada.next().toUpperCase();
 
                 Zombie nuevoZombie = new Zombie(nombre, salud, fechaNacimiento, sangre);
-
-                nuevoZombie.setNombre(nombre);
-                nuevoZombie.setSalud(salud);
-                nuevoZombie.setFechaNacimiento(fechaNacimiento);
-                nuevoZombie.setTipoSangre(sangre);
-                break;
-
-
             }
 
             if (numero_I == 2) {
@@ -66,36 +52,26 @@ public class Principal {
 
             }
             if (numero_I == 3) {
-                System.out.println(Zombie.contadorZombies);
-                break;
+                System.out.println(Zombie.contadorZombies)
             }
             if (numero_I == 4) {
                 for (int i = 0; i < Zombie.zombies.size(); i++) {
-
                     if (Zombie.zombies.get(i).getTipoSangre().equalsIgnoreCase("O+") || Zombie.zombies.get(i).getTipoSangre().equalsIgnoreCase("AB+")) {
                         System.out.println(Zombie.zombies.get(i).toString());
-
-
                     }
                 }
-                break;
             }
             if (numero_I == 5) {
-
                 for (int j = 0; j < Zombie.zombies.size(); j++) {
                     String Fecha = Zombie.zombies.get(j).getFechaNacimiento();
                     int Año = Integer.parseInt(Fecha.substring(6, 10));
                     if (Año > 2000) {
-                        System.out.println(Zombie.zombies.get(j).toString());
-
+                    System.out.println(Zombie.zombies.get(j).toString());
                     }
                 }
-                break;
             }
             if (numero_I == 6) {
                 Zombie.disminuirSalud(Zombie.zombies);
-                break;
-
             }
             if (numero_I == 7) {
                 Scanner entrada = new Scanner(System.in);
@@ -105,35 +81,19 @@ public class Principal {
                 float distancia = entrada.nextInt();
                 System.out.println("Ingrese la cantidad de zombies de la ubicación");
                 int cantidadZombies = entrada.nextInt();
-
-                Ubicacion nuevaUbicacion = new Ubicacion(nombre, distancia, cantidadZombies);
-                nuevaUbicacion.setNombre(nombre);
-                nuevaUbicacion.setDistanciaAlexandria(distancia);
-                nuevaUbicacion.setCantidadZombies(cantidadZombies);
-                break;
             }
             if (numero_I == 8) {
-                Principal.mostrarInformacionUbicacion(Ubicacion.ubicaciones);
-                break;
+                Principal.mostrarInformacionUbicacion(Ubicacion.ubicaciones); 
             }
             if (numero_I == 9) {
                 System.out.println("La Ubicacion más segura es " + Ubicacion.lugarSeguro(Ubicacion.ubicaciones).toString());
-                break;
-
             }
             if (numero_I == 10) {
                 Collections.sort(Ubicacion.ubicaciones);
                 Principal.mostrarInformacionUbicacion(Ubicacion.ubicaciones);
-
-                break;
-
-
             }
-
-
             if (numero_I == 11) {
                 int aleatorio = 0;
-
                 aleatorio = (int) (Math.random() * 4);
                 if (aleatorio == 0) {
                     System.out.println("Los zombies van a comer tu cerebro");
@@ -153,28 +113,17 @@ public class Principal {
                 if (aleatorio == 4) {
                     System.out.println("Para matar a un zombie debes dispararle en la cabeza");
                 }
-
-                break;
             }
 
             if (numero_I == 12) {
-
                     Zombie.zombiesAlimentados(Zombie.zombies);
                     System.out.println("Los zombies se han comido a tu familia");
-
-                break;
-
             }
         }
     }
-
-
-
     public static void mostrarInformacionZombie( ArrayList<Zombie> zombies) {
-
         for (int i = 0; i < zombies.size(); i++) {
             System.out.println(zombies.get(i).toString());
-
         }
     }
     public static void mostrarInformacionUbicacion( ArrayList<Ubicacion> ubicaciones){
