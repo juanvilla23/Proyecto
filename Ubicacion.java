@@ -55,21 +55,7 @@ public class Ubicacion  implements Comparable<Ubicacion> {
         return menor;
     }
 
-    public static ArrayList<Ubicacion> ordenarArreglo(ArrayList<Ubicacion> ubicaciones) {
-        int n = ubicaciones.size();
-        Ubicacion temporal;
-
-        for (int i = 1; i < n; i++) {
-            for (int j = i + 1; j < n; j++) {
-                if (ubicaciones.get(j).getDistanciaAlexandria() < ubicaciones.get(j + 1).getDistanciaAlexandria()) {
-                    temporal = ubicaciones.get(j);
-                    ubicaciones.set(j, ubicaciones.get(j + 1));
-                    ubicaciones.set(j + 1, temporal);
-                }
-            }
-        }
-        return ubicaciones;
-    }
+    
     public int compareTo(Ubicacion ubicacion){
         if(ubicacion.getDistanciaAlexandria()>distanciaAlexandria){
             return -1;
